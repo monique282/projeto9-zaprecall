@@ -1,116 +1,69 @@
+import styled from "styled-components";
+import Pergunta from "./Pergunta"
+
 export default function App() {
+
+    const questoes = [
+        {id : 1, pergue: "O que é JSX?",resposta: " Uma extensão de linguagem do JavaScript"},
+        {id : 2, pergue: " O React é __",resposta: " uma biblioteca JavaScript para construção de interfaces"},
+        {id : 3, pergue: "Componentes devem iniciar com __ ",resposta: " letra maiúscula"},
+        {id : 4, pergue: "Podemos colocar __ dentro do JSX ",resposta: " expressões"},
+        {id : 5, pergue: "O ReactDOM nos ajuda __ ",resposta: " interagindo com a DOM para colocar componentes React na mesma"},
+        {id : 6, pergue: "Usamos o npm para __ ",resposta: " gerenciar os pacotes necessários e suas dependências"},
+        {id : 7, pergue: " Usamos props para __ ",resposta: " passar diferentes informações para componentes "},
+        {id : 8, pergue: "Usamos estado (state) para __ ",resposta: " dizer para o React quais informações quando atualizadas devem renderizar a tela novamente"},
+    
+    ]
 
     return (
 
         <>
-            <div class="slogan">
-                <img class="raio" src="./src/assets/image 2.png" alt="" />
-                <H1 class="nome">ZapRecall</H1>
+            <Slogan>
+                <img className="raio" src="./src/assets/image 2.png" alt="" />
+                <h1 className="nome">ZapRecall</h1>
+            </Slogan>
+            <div className="perguntas">
+                <Pergunta questoes = {questoes} />
             </div>
-            <div class="perguntas">
-                <div class="pergunta">
-                    <div class="parte-1 escondida">
-                        <p>Pergunta 1</p>
-                        <img class="cursor" onclick="ver()" src="./src/assets/Vector.png" alt="" />
-                    </div>
-                    <div class="parte-2 escondida">
-                        <p>O que é JSX?</p>
-                        <img class="cursor" onclick="virar()" src="./src/assets/Vecto.png" alt="" />
-                    </div>
-                    <div class="parte-3 ">
-                        <p class="resp"> Uma extensão de linguagem do JavaScript</p>
-                        <div class="opcoes">
-                            <div class="nao-lembro">
-                                <p>Não Lembrei</p>
-                            </div>
-                            <div class="quase-nao-lembrei">
-                                <p>Quase não lembrei</p>
-                            </div>
-                            <div class="zap">
-                                <p>Zap!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pergunta">
-                    <div class="parte-1 escondida">
-                        <p>Pergunta 2</p>
-                        <img class="cursor" onclick="ver()" src="./src/assets/Vector.png" alt="" />
-                    </div>
-                    <div class="parte-2 escondida">
-                        <p>O React é __ </p>
-                        <img class="cursor" onclick="virar()" src="./src/assets/Vecto.png" alt="" />
-                    </div>
-                    <div class="parte-3 ">
-                        <p class="resp">uma biblioteca JavaScript para construção de interfaces</p>
-                        <div class="opcoes">
-                            <div class="nao-lembro">
-                                <p>Não Lembrei</p>
-                            </div>
-                            <div class="quase-nao-lembrei">
-                                <p>Quase não lembrei</p>
-                            </div>
-                            <div class="zap">
-                                <p>Zap!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="pergunta">
-                    <div class="parte-1 escondida">
-                        <p>Pergunta 3</p>
-                        <img class="cursor" onclick="ver()" src="./src/assets/Vector.png" alt="" />
-                    </div>
-                    <div class="parte-2 escondida">
-                        <p>Componentes devem iniciar com __</p>
-                        <img class="cursor" onclick="virar()" src="./src/assets/Vecto.png" alt="" />
-                    </div>
-                    <div class="parte-3 ">
-                        <p class="resp">letra maiúscula</p>
-                        <div class="opcoes">
-                            <div class="nao-lembro">
-                                <p>Não Lembrei</p>
-                            </div>
-                            <div class="quase-nao-lembrei">
-                                <p>Quase não lembrei</p>
-                            </div>
-                            <div class="zap">
-                                <p>Zap!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="pergunta">
-                    <div class="parte-1 escondida">
-                        <p>Pergunta 4</p>
-                        <img class="cursor" onclick="ver()" src="./src/assets/Vector.png" alt="" />
-                    </div>
-                    <div class="parte-2 escondida">
-                        <p>Podemos colocar __ dentro do JSX</p>
-                        <img class="cursor" onclick="virar()" src="./src/assets/Vecto.png" alt="" />
-                    </div>
-                    <div class="parte-3 ">
-                        <p class="resp">expresões</p>
-                        <div class="opcoes">
-                            <div class="nao-lembro">
-                                <p>Não Lembrei</p>
-                            </div>
-                            <div class="quase-nao-lembrei">
-                                <p>Quase não lembrei</p>
-                            </div>
-                            <div class="zap">
-                                <p>Zap!</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="concluidos">
+            <Concluidos>
                 <p>1/4 Concluidos</p>
-            </div>
+            </Concluidos>
         </>
     )
 }
+
+const Slogan = styled.div`
+    display: flex;
+    width: 256px;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 42px;
+
+`;
+
+const Concluidos = styled.div`
+     width: 100%;
+    height: 70px;
+    background-color: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+   
+   p{
+    width: 145px;
+    height: 22px;
+    font-family: 'Recursive';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #333333;
+}
+
+   }
+`;
