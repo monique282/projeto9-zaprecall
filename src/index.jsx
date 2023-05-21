@@ -9,3 +9,5 @@ const rootElement = document.querySelector('.total');
 createRoot(rootElement).render(
     <App />
     );
+
+    
