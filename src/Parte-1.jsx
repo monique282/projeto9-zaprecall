@@ -21,9 +21,7 @@ export default function Parte1(props) {
         setcores(cor);
         let cont = contador + 1;
         setcontador(cont);
-
     };
-
 
 
     return (
@@ -32,10 +30,10 @@ export default function Parte1(props) {
                 <Parte_1 cor={cores} data-test="flashcard" >
                     <p data-test="flashcard-text">Pergunta {id}</p>
                     {cores === '#333333' && (
-                        <img onClick={() => setvizivel('parte2')} src={setinha} alt="" data-test="play-btn"/>
+                        <img onClick={() => setvizivel('parte2')} src={setinha} alt="" data-test="play-btn" />
                     )}
                     {cores !== '#333333' && (
-                        <img src={iconeparte1} alt="" data-test="no-icon"  />
+                        < img src={iconeparte1} alt="" data-test="no-icon" />
                     )}
                 </Parte_1 >
             )}

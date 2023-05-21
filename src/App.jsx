@@ -1,34 +1,25 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Pergunta from "./Pergunta"
+import questo from "./Questoes";
+
 
 export default function App() {
 
     let [contador, setcontador] = useState(0);
 
-    const questoes = [
-        { id: 1, pergue: "O que é JSX?", resposta: " Uma extensão de linguagem do JavaScript" },
-        { id: 2, pergue: " O React é __", resposta: " uma biblioteca JavaScript para construção de interfaces" },
-        { id: 3, pergue: "Componentes devem iniciar com __ ", resposta: " letra maiúscula" },
-        { id: 4, pergue: "Podemos colocar __ dentro do JSX ", resposta: " expressões" },
-        { id: 5, pergue: "O ReactDOM nos ajuda __ ", resposta: " interagindo com a DOM para colocar componentes React na mesma" },
-        { id: 6, pergue: "Usamos o npm para __ ", resposta: " gerenciar os pacotes necessários e suas dependências" },
-        { id: 7, pergue: " Usamos props para __ ", resposta: " passar diferentes informações para componentes " },
-        { id: 8, pergue: "Usamos estado (state) para __ ", resposta: " dizer para o React quais informações quando atualizadas devem renderizar a tela novamente" },
-    ]
 
     return (
-
         <>
             <Slogan>
                 <Raio src="./src/assets/image 2.png" alt="" />
                 <Nome>ZapRecall</Nome>
             </Slogan>
             <Perguntas>
-                <Pergunta questoes={questoes} contador={contador} setcontador={setcontador} />
+                <Pergunta questo={questo} contador={contador} setcontador={setcontador} />
             </Perguntas>
             <Concluidos data-test="footer" >
-                <p>{contador}/{questoes.length} Concluidos</p>
+                <p>{contador}/{questo.length} Concluidos</p>
             </Concluidos>
         </>
     )
@@ -94,5 +85,4 @@ const Concluidos = styled.div`
     color: #333333;
 }
 
-   
 `;

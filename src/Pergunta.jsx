@@ -3,7 +3,7 @@ import Parte1 from "./Parte-1";
 
 export default function Pergunta(props) {
 
-    const { questoes, contador, setcontador } = props;
+    const { questo, contador, setcontador } = props;
 
     // preciso de um estado que adicione ou retire a vis escondido somente da linha que for clicado
    
@@ -11,15 +11,14 @@ export default function Pergunta(props) {
     return (
 
         <div className="pergunta">
-            <>{questoes.map((questoes) => (
+            <>{questo.map((questo) => (
                 <Parte1
-                    key={questoes.id}
-                    id={questoes.id}
-                    pergue={questoes.pergue}
-                    resposta={questoes.resposta}
+                    key={questo.id}
+                    id={questo.id}
+                    pergue={questo.pergue}
+                    resposta={questo.resposta}
                     contador={contador}
                     setcontador={setcontador} 
-
                 />
             ))}</>
 
