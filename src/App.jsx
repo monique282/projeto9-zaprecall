@@ -27,7 +27,7 @@ export default function App() {
             <Perguntas>
                 <Pergunta questoes={questoes} contador={contador} setcontador={setcontador} />
             </Perguntas>
-            <Concluidos >
+            <Concluidos data-test="footer" >
                 <p>{contador}/{questoes.length} Concluidos</p>
             </Concluidos>
         </>
