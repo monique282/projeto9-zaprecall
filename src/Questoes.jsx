@@ -8,9 +8,6 @@ const questoes = [
     { id: 7, pergue: "Qual é o nome da escola de magia rival de Hogwarts? ", resposta: "Durmstrang" },
     { id: 8, pergue: "Qual é o nome do elfo doméstico que é leal a Harry Potter? ", resposta: " Dobby" },
     { id: 9, pergue: "Qual é o nome da professora de Adivinhação em Hogwarts? ", resposta: " Sibila Trelawney" },
-    { id: 10, pergue: "Quem é o diretor de Hogwarts no primeiro livro/filme da série?  ", resposta: " Alvo Dumbledore" },
-    { id: 11, pergue: "Qual é o nome do prisioneiro que escapa de Azkaban no terceiro livro/filme da série?  ", resposta: " Sirius Black" },
-    { id: 12, pergue: "Qual é o nome do torneio que ocorre em Harry Potter e o Cálice de Fogo?", resposta: " Torneio Tribruxo." },
-]
+    ]
 
 export default questoes;

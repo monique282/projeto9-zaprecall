@@ -9,15 +9,13 @@ export default function Parte1(props) {
 
     const { id, pergue, contador, setcontador, resposta } = props;
     const [visivel, setvizivel] = useState('parte1');
-    const [iconeparte1, seticoneparte1] = useState(setinha);
     const [cores, setcores] = useState('#333333');
 
 
 
 
-    const virarcarta = (icone, cor) => {
+    const virarcarta = ( cor) => {
         setvizivel('parte1');
-        seticoneparte1(icone);
         setcores(cor);
         let cont = contador + 1;
         setcontador(cont);
@@ -32,9 +30,17 @@ export default function Parte1(props) {
                     {cores === '#333333' && (
                         <img onClick={() => setvizivel('parte2')} src={setinha} alt="" data-test="play-btn" />
                     )}
-                    {cores !== '#333333' && (
-                        < img src={iconeparte1} alt="" data-test="no-icon" />
+                    {cores === '#FF3030' && (
+                        < img src={errado} alt="" data-test="no-icon" />
                     )}
+                     {cores === ' #FF922E' && (
+                        < img src={quase} alt="" data-test="partial-icon" />
+                    )}
+                    {cores === '#2FBE34' && (
+                        < img src={certo} alt="" data-test="zap-icon" />
+                    )}
+                    
+
                 </Parte_1 >
             )}
 
@@ -48,20 +54,19 @@ export default function Parte1(props) {
                 <Parte_3 data-test="flashcard">
                     <Resp data-test="flashcard-text">{resposta}</Resp>
                     <Opcoes>
-                        < Botao corbotao={'#FF3030'} onClick={() => virarcarta(errado, '#FF3030')} data-test="no-btn" >
+                        < Botao corbotao={'#FF3030'} onClick={() => virarcarta('#FF3030')} data-test="no-btn" >
                             <p>Não Lembrei</p>
                         </Botao>
-                        <Botao corbotao={'#FF922E'} onClick={() => virarcarta(quase, ' #FF922E')} data-test="partial-btn">
+                        <Botao corbotao={'#FF922E'} onClick={() => virarcarta(' #FF922E')} data-test="partial-btn">
                             <p>Quase não lembrei</p>
                         </Botao>
-                        <Botao corbotao={'#2FBE34'} onClick={() => virarcarta(certo, '#2FBE34')} data-test="zap-btn">
+                        <Botao corbotao={'#2FBE34'} onClick={() => virarcarta('#2FBE34')} data-test="zap-btn">
                             <p>Zap!</p>
                         </Botao>
                     </Opcoes>
                 </Parte_3>
             )}
         </>
-
 
     )
 }
